@@ -18,16 +18,16 @@ RSpec.configure do |config|
     'v1/swagger.yaml' => {
       openapi: '3.0.1',
       info: {
-        title: 'API V1',
+        title: 'Swaggerize API',
         version: 'v1'
       },
       paths: {},
       servers: [
         {
-          url: 'https://{defaultHost}',
+          url: '{local}',
           variables: {
-            defaultHost: {
-              default: 'www.example.com'
+            local: {
+              default: 'http://localhost:3000'
             }
           }
         }
