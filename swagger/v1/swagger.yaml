@@ -4,6 +4,80 @@ info:
   title: Swaggerize API
   version: v1
 paths:
+  "/posts":
+    get:
+      summary: list posts
+      tags:
+      - Post
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create post
+      tags:
+      - Post
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                title:
+                  type: string
+                content:
+                  type: string
+              required:
+              - user_id
+              - title
+              - content
+  "/posts/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show post
+      tags:
+      - Post
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                title:
+                  type: string
+                content:
+                  type: string
+    patch:
+      summary: update post
+      tags:
+      - Post
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete post
+      tags:
+      - Post
+      responses:
+        '200':
+          description: successful
   "/users":
     get:
       summary: list users
