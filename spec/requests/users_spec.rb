@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 require 'swagger_helper'
 
 RSpec.describe 'users', type: :request do
-
   path '/users' do
-
     get('list users') do
-      response(200, 'successful') do
+      tags 'User'
 
+      response(200, 'successful') do
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -19,8 +20,21 @@ RSpec.describe 'users', type: :request do
     end
 
     post('create user') do
+      tags 'User'
       response(200, 'successful') do
-
+        consumes 'application/json'
+        parameter name: :user, in: :body, schema: {
+          type: :object,
+          properties: {
+            name: { type: :string },
+            email: { type: :string },
+            password: { type: :string },
+            profession: { type: :string },
+            avatar: { type: :string },
+            bio: { type: :string }
+          },
+          required: %w[name email password]
+        }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -38,8 +52,9 @@ RSpec.describe 'users', type: :request do
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     get('show user') do
+      tags 'User'
       response(200, 'successful') do
-        let(:id) { '123' }
+        let(:id) { '1' }
 
         after do |example|
           example.metadata[:response][:content] = {
@@ -53,24 +68,21 @@ RSpec.describe 'users', type: :request do
     end
 
     patch('update user') do
+      tags 'User'
       response(200, 'successful') do
-        let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
+        let(:id) { '1' }
+        consumes 'application/json'
+        parameter name: :user, in: :body, schema: {
+          type: :object,
+          properties: {
+            name: { type: :string },
+            email: { type: :string },
+            password: { type: :string },
+            profession: { type: :string },
+            avatar: { type: :string },
+            bio: { type: :string }
           }
-        end
-        run_test!
-      end
-    end
-
-    put('update user') do
-      response(200, 'successful') do
-        let(:id) { '123' }
-
+        }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -83,8 +95,9 @@ RSpec.describe 'users', type: :request do
     end
 
     delete('delete user') do
+      tags 'User'
       response(200, 'successful') do
-        let(:id) { '123' }
+        let(:id) { '1' }
 
         after do |example|
           example.metadata[:response][:content] = {

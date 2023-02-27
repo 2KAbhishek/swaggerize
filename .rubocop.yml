@@ -2,3 +2,4 @@ AllCops:
   NewCops: enable
   Exclude:
     - bin/*
+    - db/schema.rb
