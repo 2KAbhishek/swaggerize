@@ -20,78 +20,61 @@
 <a href="https://github.com/2KAbhishek/swaggerize/pulse">
 <img alt="Last Updated" src="https://img.shields.io/github/last-commit/2kabhishek/swaggerize?style=flat&color=e06c75&label="> </a>
 
-<h3>Short Sweet Headline 🎇🎉</h3>
+<h3>Swagger and Rails 🤝💎</h3>
 
 <figure>
-  <img src="images/screenshot.png" alt="swaggerize in action">
+  <img src="images/screenshot.jpg" alt="swaggerize in action">
   <br/>
   <figcaption>swaggerize in action</figcaption>
 </figure>
 
 </div>
 
-swaggerize is a `<utility/tool>` that allows `<target_audience>` to `<action>`.
+swaggerize is a rails API application to demonstrate swagger integration with rails using rswag gem.
 
 ## ✨ Features
 
-- Supports foo
-- Can do bar
-- Works with bazz
+- Rails API app with interactive API docs
+- Seeds with FactoryBot
 
 ## Setup
 
 ### ⚡ Requirements
 
-- foo >= bar
-- bazz
+- ruby 3.1.2
 
 ### 🚀 Installation
 
 ```bash
 git clone https://github.com/2kabhishek/swaggerize
 cd swaggerize
-<install_command>
+bundle install
+bin/rake db:reset
 ```
 
 ### 💻 Usage
 
 ```bash
-USAGE:
-    swaggerize [FLAGS] [OPTIONS]
-Example:
-    swaggerize
+bin/rails s
 ```
-
-## What's Next
-
-Planning to add `<feature/module>`.
-
-### ✅ To-Do
-
-- [x] Setup repo
-- [ ] Think real hard
-- [ ] Start typing
 
 ##  Behind The Code
 
 ### 🌈 Inspiration
 
-swaggerize was inspired by `<reason/idea>`.
+Was learning about swagger and wanted to try integration with rails
 
 ### 💡 Challenges/Learnings
 
-- The main challenges were `<issue/difficulty>`
-- I learned about `<learning/accomplishment>`
+- The main challenges were setting up `rswag`
+- I learned about OpenAPI specs, swagger and the tooling around swagger.
 
 ### 🧰 Tooling
 
+- [rswag](https://github.com/rswag/rswag) — Gem for Swagger integration
 - [Dotfiles](https://github.com/2kabhishek/Dotfiles) — Dev Environment
 - [nvim2k](https://github.com/2kabhishek/nvim2k) — Personalized Editor
 - [awesome2k](https://github.com/2kabhishek/awesome2k) — Tiling Window Manager
-
-### 🔍 More Info
-
-- [similar](https://github.com/2kabhishek/similar) — a related repo
 
 <hr>
 
